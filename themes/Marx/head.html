@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{$media.title}</title>
+    <meta name="keywords" content="{$media.keywords}" />
+	<meta name="description" content="{$media.description}" />
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/content.css"/>
+</head>
+<body>
+    <div class="header">
+        <div class="header_wrap">
+            <div class="header_logo">
+                <a href="###">
+                    <img class="logo" src="images/logo.png" alt=""/>
+                </a>
+            </div>
+            <div class="header_title">
+                <h1>马克思主义与当代社会思潮</h1>
+                <h5>The Marx doctrine and the contemporary social trend of thought</h5>
+            </div>
+            <div class="header_nav">
+                <ul>
+                    <li><a href="__ROOT__/">首页</a></li>
+                     <!--list{app="DuxCms" label="categoryList" limit=8 parent_id=0  }-->
+           <li> <a href="{$list.curl}" <!--if{$list['class_id']==$topCategoryInfo['class_id']}--> class="u-crt" <!--{/if}-->  >{$list.name}</a></li>
+        <!--{/list}-->
+                    <li><a href="{url("DuxCms/Form/index",array("name"=>'guestbook'))}">留言互动</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="header_red"></div>
+    </div>

@@ -1,0 +1,62 @@
+<!--#include file="head.html"-->
+<div class="center">
+    <div class="center_left">
+        <div class="center_left_content">
+            <div class="center_left_content_header">
+                <h2>网站分类</h2>
+            </div>
+            <ul>
+              <!--list{app="DuxCms" label="categoryList" limit="10" parent_id="0"}-->
+					<li><a href="{$list.curl}">{$list.name}</a></li>
+			<!--{/list}-->
+            </ul>
+        </div>
+    </div>
+	<div class="center_right">
+		<div class="m-crumb">
+			<ul class="f-cb">
+				<a href="__ROOT__/">首页</a>
+				<!--foreach{$crumb as $vo}--> 
+				<i>&gt;</i><a href="{$vo.url}">&nbsp;{$vo.name}</a>
+				<!--{/foreach}-->
+			</ul>
+		</div>
+		<div class="center_right_bottom" style="line-height:2rem; padding:1rem;">
+		<!--foreach{$pageList as $vo}--> 
+		<div style="font-size:12px;  border:1px solid #CCC; border-left:4px solid #690; padding:0.2rem 0.6rem;">
+			<div class="info" style="font-size:12px;color:#777777;">{$vo.name} | {date('Y-m-d',$vo['time'])}</div>
+			<div class="content">{$vo.content}</div>
+			 <!--if{$vo['replycontent']}-->
+			<div style="color:red">回复：{$vo.replycontent}</div>
+			<!--{/if}-->
+		</div>
+		<br>
+		<!--{/foreach}-->
+		<br/>
+				<div class="m-gb-form">
+			<form action="{U('DuxCms/Form/push')}" method="post" AutoComplete="off" >
+				<div class="m-form"> 
+                	<div class="formitm">
+                        <label class="lab">姓名：</label>
+                        <div class="ipt">
+                            <input type="text" name="name" class="u-ipt" />
+                        </div>
+                    </div>
+                    <div class="formitm">
+                        <label class="lab">内容：</label>
+                        <div class="ipt">
+                          <textarea name="content" class="u-tta u-tta-6" id="content"></textarea>
+                        </div>
+                    </div>
+					<div class="formitm formitm-1">
+                    	<input name="table" type="hidden" value="guestbook">
+                        <input name="token" type="hidden" value=' <!--echo{ app="DuxCms" label="formToken" table="guestbook" }--> '>
+						<button class="u-btn" type="submit">确认发布</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+<!--#include file="foot.html"-->

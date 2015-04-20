@@ -1,0 +1,119 @@
+.inline_block {
+  display: inline-block;
+  *display: inline;
+  /*ie6*/
+  *zoom: 1;
+}
+html {
+  font-family: "Arial";
+}
+.header {
+  min-width: 1024px;
+  height: 146px;
+}
+.header .header_wrap {
+  position: relative;
+  width: 1002px;
+  height: 146px;
+  z-index: 3;
+  margin: 0 auto 0 auto;
+}
+.header .header_wrap .header_logo,
+.header .header_wrap .header_title,
+.header .header_wrap .header_nav {
+  float: left;
+}
+.header .header_wrap .header_logo {
+  width: 243px;
+  background: url("../images/logo_top.png") no-repeat 0 94px;
+}
+.header .header_wrap .header_logo .logo {
+  margin-left: 48px;
+}
+.header .header_wrap .header_title {
+  padding-left: 20px;
+  padding-top: 21px;
+  padding-bottom: 10px;
+}
+.header .header_wrap .header_title h1 {
+  font-size: 36px;
+  color: #b14658;
+}
+.header .header_wrap .header_title h5 {
+  font-size: 18px;
+  color: #b14658;
+}
+.header .header_wrap .header_nav {
+  width: 758px;
+  height: 48px;
+}
+.header .header_wrap .header_nav ul li {
+  padding-top: 16px;
+  height: 32px;
+  width: 93px;
+  float: left;
+  text-align: center;
+}
+.header .header_wrap .header_nav ul li a {
+  color: #fefefe;
+  font-size: 16px;
+  text-decoration: none;
+}
+.header .header_wrap .header_nav ul li a:hover {
+  color: #e0e0e0;
+}
+.header .header_wrap .header_nav ul:after {
+  content: "\200B";
+  display: block;
+  height: 0;
+  clear: both;
+}
+.header .header_wrap:after {
+  content: "\200B";
+  display: block;
+  height: 0;
+  clear: both;
+}
+.header .header_red {
+  background: #b40121;
+  height: 48px;
+  position: absolute;
+  width: 100%;
+  top: 94px;
+  z-index: 2;
+  min-width: 1024px;
+}
+.footer {
+  min-width: 1002px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.footer .footer_wrap {
+  width: 1002px;
+  margin: 0 auto 0 auto;
+}
+.footer .footer_wrap a,
+.footer .footer_wrap span {
+  font-size: 20px;
+}
+.footer .footer_wrap .footer_wrap_content {
+  display: inline-block;
+  *display: inline;
+  /*ie6*/
+  *zoom: 1;
+  float: right;
+  color: #91061c;
+  margin-right: 168px;
+  text-decoration: none;
+}
+.footer .footer_wrap .footer_wrap_link,
+.footer .footer_wrap span {
+  float: right;
+  color: #575555;
+}
+.footer .footer_wrap:after {
+  content: "\200B";
+  display: block;
+  height: 0;
+  clear: both;
+}

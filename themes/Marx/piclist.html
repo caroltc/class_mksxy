@@ -1,0 +1,51 @@
+<!--#include file="head.html"-->
+
+
+
+
+<div class="center">
+    <div class="center_left">
+        <div class="center_left_content">
+            <div class="center_left_content_header">
+                <h2>栏目列表</h2>
+            </div>
+            <ul>
+               <!--list{ app="DuxCms" label="categoryList" parent_id=$categoryInfo['class_id'] }-->
+					<li><a href="{$list.curl}">{$list.name}</a></li>
+					<!--{/list}-->
+            </ul>
+        </div>
+    </div>
+	<div class="g-mn">
+		<div class="m-crumb">
+			<ul class="f-cb">
+				<a href="__ROOT__/">首页</a>
+				<!--foreach{$crumb as $vo}--> 
+				<i>&gt;</i><a href="{$vo.url}">&nbsp;{$vo.name}</a>
+				<!--{/foreach}-->
+			</ul>
+		</div>
+		<div class="center_right_bottom" style="line-height:2rem; padding:1rem;">
+<!--foreach{$pageList as $vo}--> 
+		<div class="m-pg-lst">
+			<div class="pic">
+            <!--if{$vo['image']}-->
+			<img src="{$vo.image}" width="120" height="80">
+			<!--{else}-->
+			<img src="images/fm.jpg" width="120" height="80">
+			<!--{/if}-->
+			</div>
+			<div class="info">
+				<div class="tt"><a href="{$vo.aurl}">{$vo.title}</a></div>
+				<div class="dsc">{$vo.description}</div>
+				<div class="time"><span>时间：{date('Y-m-d',$vo['time'])}</span> <span>访问：{$vo.views}</span></div>
+			</div>
+			<div class="f-cb"></div>
+		</div>
+		<!--{/foreach}-->
+		<div class="m-page">{$page} </div>
+			<div class="f-cb"></div>
+		</div>
+	</div>
+</div>
+<!--#include file="foot.html"-->

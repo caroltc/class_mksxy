@@ -1,0 +1,90 @@
+<!--#include file="head.html"-->
+    <div class="center">
+        <div class="center_tleft">
+            <div class="center_tleft_content">
+                <div class="center_tleft_content_header">
+                    <h2>课程简介</h2>
+                </div>
+                <p style="padding:1rem 0.4rem; font-size:14px; line-height:24px; color:#333;">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!--echo{app="DuxCms" label="fragment" mark="sy_kcjj"}-->                    
+                </p>
+            </div>
+             <form action="{url('Article/Search/index')}" method="post" id="searchform">
+             <input type="hidden" name="model" value="0">
+        <input name="keyword" type="text" maxlength="20" class="center_tleft_search" placeholder="输入关键字" style="font-size:12px;">
+ <input class="center_tleft_searchbutton" type="submit" value="搜索" >        </form>
+        </div>
+        <div class="center_tmiddle">
+            <div class="show_imgs">
+                <div class="container">
+                    <div id="allImgs">
+                        <!--list{app="DuxCms" label="contentList" limit=5 image=true }-->
+                            <a href="{$list.aurl}" target="_blank"><img src="{cut_image($list.image,590,332)}" width="590" height="332"   /></a>
+                        <!--{/list}-->
+                    </div>
+                    <div class="img_txt">
+                        <!--list{app="DuxCms" label="contentList" limit=5 image=true }-->
+                            <a href="{$list.aurl}" target="_blank"><p>{$list.title}</p></a>
+                        <!--{/list}-->
+                    </div>
+                    <ul>
+                        <!--list{app="DuxCms" label="contentList" limit=5 image=true }-->
+                            <li></li>
+                        <!--{/list}-->
+                    </ul>
+                    <div class="button button_left"><a href="###"><i class="button_font">&#xf0008;</i></a></div>
+                    <div class="button button_right"><a href="###"><i class="button_font">&#xf0007;</i></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="center_tright">
+            <div class="center_tright_top">
+                <div class="center_tright_top_header">
+                    <h2>教师风采</h2>
+                </div>
+                <a class="teacher" href="###"><img src="images/head.png" width="80px" alt=""/></a>
+                <a class="teacher_name" href="###">黛西</a>
+                <a class="teacher" href="###"><img src="images/head.png" width="80px" alt=""/></a>
+                <a class="teacher_name" href="###">黛西</a>
+                <br>
+            </div>
+        </div>
+        <div class="center_bleft">
+            <div class="center_bleft_content">
+                <div class="center_bleft_content_header">
+                    <h2>课件资料</h2>
+                </div>
+                <ul>
+                    <!--list{app="DuxCms" label="contentList" limit="8" class_id=5}-->
+                        <li>&nbsp;&nbsp;<a href="{$list.aurl}">{$list.title}</a><span style="float:right;font-size:12px;color:#444444;">{date('Y-m-d',$list['time'])}&nbsp;&nbsp;</span></li>
+                        <!--{/list}-->
+                </ul>
+            </div>
+        </div>
+        <div class="center_bmiddle">
+            <div class="center_bmiddle_content">
+                <div class="center_bmiddle_content_header">
+                    <h2>学科新闻</h2>
+                </div>
+                <ul>
+                    <!--list{app="DuxCms" label="contentList" limit="8" class_id=7}-->
+                        <li>&nbsp;&nbsp;<a href="{$list.aurl}">{$list.title}</a><span style="float:right;font-size:12px;color:#444444;">{date('Y-m-d',$list['time'])}&nbsp;&nbsp;</span></li>
+                        <!--{/list}-->
+                </ul>
+            </div>
+        </div>
+        <div class="center_bright">
+            <div class="center_bright_content">
+                <div class="center_bright_content_header">
+                    <h2>教学视频</h2>
+                </div>
+                <ul>
+                    <!--list{app="DuxCms" label="contentList" limit="8" class_id=6}-->
+                        <li>&nbsp;&nbsp;<a href="{$list.aurl}">{$list.title}</a></li>
+                        <!--{/list}-->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!--#include file="foot.html"-->

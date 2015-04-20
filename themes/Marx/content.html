@@ -1,0 +1,47 @@
+<!--#include file="head.html"-->
+<div class="center">
+    <div class="center_left">
+        <div class="center_left_content">
+            <div class="center_left_content_header">
+                <h2>最新推荐</h2>
+            </div>
+            <ul>
+              <!--list{app="DuxCms" label="contentList" limit="10"}-->
+            <li>
+              <a href="{$list.aurl}">{$list.title}</a>
+            </li>
+            <!--{/list}-->
+            </ul>
+        </div>
+    </div>
+	<div class="g-mn">
+		<div class="m-crumb">
+			<ul class="f-cb">
+				<a href="__ROOT__/">首页</a>
+				<!--foreach{$crumb as $vo}--> 
+				<i>&gt;</i><a href="{$vo.url}">&nbsp;{$vo.name}</a>
+				<!--{/foreach}-->
+			</ul>
+		</div>
+		<div class="center_right_top" style="text-align:center; font-size:1.6rem; font-weight:bolder; line-height:3rem;">
+				<h1>{$contentInfo.title}</h1>
+        </div>
+		<div class="m-pg-info" style="font-size:12px; text-align:center;">
+			<span>{date('Y-m-d H:i:s',$contentInfo['time'])}</span>　<span>来源：{$contentInfo.copyfrom}</span>　<span>浏览：{$contentInfo.views}</span> 
+		</div>
+        <hr/>
+		<div class="center_right_bottom" style="line-height:2rem; padding:1rem;">
+			{$contentInfo.content}
+		</div>
+		<div class="m-pg-ln" style="font-size:12px;margin-top:5rem;">
+			<div class="last"><span>上一篇：</span>
+			<a href="{$prevInfo.aurl}">{$prevInfo.title}</a> 
+			</div>
+			<div class="next"><span>下一篇：</span> 
+			<a href="{$nextInfo.aurl}">{$nextInfo.title}</a> 
+			</div>
+			<div class="f-cb"></div>
+		</div>
+	</div>
+</div>
+<!--#include file="foot.html"-->
